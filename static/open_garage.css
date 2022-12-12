@@ -1,0 +1,22 @@
+.announcement {
+position: relative;
+opacity: .777;
+background-color:white;
+height: 70%;
+border-color:grey;
+border-style:solid;
+border-radius:16px;
+}
+
+.garage-navbar {
+  position: relative;
+  top: 10px;
+  background-color: #999999;
+  color:#999999;
+  opacity: 90%
+}
+
+.navbar-right {
+  position: relative;
+  right: 50px;
+}

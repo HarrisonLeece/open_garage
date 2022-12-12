@@ -1,0 +1,33 @@
+{% extends "admin/administration_base.html" %}
+
+{% block admin_features %}
+
+<div class="container">
+  <div class="five columns" style="margin-top: 10%">
+    <h1> Open Garage Cory - Admin </h1>
+    <form action="{{url_for('admin.admin_prod')}}" method="post">
+      <div class="row">
+        <input type="text" id="t_user" name="target_username" placeholder="Target Username">
+        <input type="submit" class="button-primary" name="submit_post" value="Submit">
+      </div>
+      <div class="row">
+        <div class="four columns"> <input class="button-primary" type="submit" name="submit_post" value="reset_password"> </div>
+        <div class="four columns"> <input class="button-primary" type="submit" name="submit_post" value="remove_user"> </div>
+        <div class="four columns"> <input class="button-primary" type="submit" name="submit_post" value="suspend_user"> </div>
+      </div>
+      <div class="row">
+        <div class="four columns"> <input class="button-primary" type="submit" name="submit_post" value="add_point"> </div>
+        <div class="four columns"> <input class="button-primary" type="submit" name="submit_post" value="blank"> </div>
+        <div class="four columns"> <input class="button-primary" type="submit" name="submit_post" value="reverse_suspension"> </div>
+      </div>
+      {{form.csrf_token}}
+    </form>
+  </div>
+  <div class="seven columns" style="margin-top:10%">
+    <div class="announcement">
+      <h2 style="text-align:center;"> Log: </h2>
+      <p> {{log}} </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

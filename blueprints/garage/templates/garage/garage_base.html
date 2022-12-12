@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='normalize.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='skeleton.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='open_garage.css')}}">
+    <title>{% block title %}{% endblock %}</title>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+  </head>
+  <body style="background-image: url('../static/tesselated_grad.webp'); background-repeat: no-repeat;">
+    <div>
+      <div class="garage-navbar">
+        <nav class="row">
+            <div class="eight columns">
+              <a href="/home">Home</a>
+              <a href="/garage">Manage Garage</a>
+              <a href="/neighborhood-services">Community Services</a>
+              <a href="/search">Tool Search</a>
+
+            </div>
+          <div class="four columns">
+            <div class="row" style="float:right">
+              <a style="float:left;"> Notification Bell </a>
+              <div class="dropdown" style="float:left;">
+                <button class="dropbtn"> {{ username }}
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="/user-settings">user settings</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

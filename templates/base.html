@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='normalize.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='skeleton.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='open_garage.css')}}">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="topnav">
+     <a class="active" href="/garage">garage</a>
+     <a href="/search">Search Tools</a>
+     <a href="/neighborhood-services">Services</a>
+     <div class="dropdown">
+       <button class="dropbtn">Settings
+         <i class="fa fa-caret-down"></i>
+       </button>
+       <div class="dropdown-content">
+         <a href="/settings">settings</a>
+         <a href="/about">about</a>
+         <a href="/help">Help</a>
+       </div>
+     </div>
+    </div>
+  </body>
+</html>
